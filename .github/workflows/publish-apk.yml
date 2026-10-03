@@ -1,0 +1,23 @@
+name: Publish verified APK
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/publish-apk.yml']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify tested APK
+        run: |
+          cat download-parts/apk.* > dicio-a34.apk
+          echo 'c24658bd89fa5ceff3d50160c943b506078699609cd035e933763bbbc126492d  dicio-a34.apk' | sha256sum --check
+          sha256sum dicio-a34.apk > SHA256SUMS.txt
+      - name: Publish APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload v4.1-a34.1 dicio-a34.apk SHA256SUMS.txt --clobber
+          gh release edit v4.1-a34.1 --draft=false --prerelease --notes-file RELEASE-NOTES.md

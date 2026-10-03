@@ -4,7 +4,9 @@ Versión de prueba basada en [Dicio](https://github.com/Stypox/dicio-android), c
 
 ## Descargar
 
-El APK y el código fuente se publicarán en Releases.
+[Descargar APK (47 MiB)](https://github.com/JonathanMV0309/dicio-a34/releases/download/v4.1-a34.1/dicio-a34.apk) · [Versión y código fuente](https://github.com/JonathanMV0309/dicio-a34/releases/tag/v4.1-a34.1)
+
+Descarga pública verificada; SHA-256: `c24658bd89fa5ceff3d50160c943b506078699609cd035e933763bbbc126492d`.
 
 ## Ejemplo
 
@@ -23,7 +25,7 @@ Instala el APK, permite micrófono y notificaciones y activa «Hey Dicio». En a
 
 Compilación completa correcta, 44 pruebas unitarias de la app aprobadas y 31 comprobaciones adicionales del registro de gastos. Firma APK y bibliotecas ARM64 verificadas. Las pruebas físicas de micrófono, batería y pantalla bloqueada en Samsung A34 están pendientes. La app no tiene una integración de conversación con IA ni sincronización con SIAL.
 
-Consulta [A34-DEVELOPMENT.md](A34-DEVELOPMENT.md) para instrucciones de compilación y pruebas. Los ejemplos de CI están en `ci-examples`; no hay automatizaciones de publicación habilitadas.
+Consulta [A34-DEVELOPMENT.md](A34-DEVELOPMENT.md) para instrucciones de compilación y pruebas. Los ejemplos originales de CI están en `ci-examples`. El flujo `Publish verified APK` publicó el APK después de verificar su SHA-256.
 
 ## Licencia
 
